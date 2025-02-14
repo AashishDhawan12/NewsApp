@@ -96,8 +96,6 @@ class HomeFragment : Fragment() {
 
             }
         }
-
-
     }
 
     private fun setUpSearchView() {

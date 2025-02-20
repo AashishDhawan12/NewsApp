@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-                Toast.makeText(requireContext(), "Failed to fetch news", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Failed to fetch news, please check your internet connection", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -72,9 +72,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpCategorySpinner() {
-        val categories = listOf("General", "Business", "Technology",
-                                "Entertainment", "Health", "Science",
-                                "Music", "Gaming", "Movies");
+        val categories = listOf("Trending Now", "General" ,"Business", "Technology",
+                                "Science", "Medical", "Movies",
+                                "Music", "Gaming", "Crypto");
         val adapter = ArrayAdapter(
             requireContext(),
             android.R.layout.preference_category,

@@ -1,6 +1,8 @@
 package com.app.newsapp.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import com.app.newsapp.R
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +47,11 @@ class NewsAdapter(private val context: Context, private val newsList: List<Artic
             .placeholder(R.drawable.ic_launcher_background)
             .into(holder.newsImage)
 
+        holder.newsTitle.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(news.url))
+            holder.itemView.context.startActivity(intent)
 
+        }
         // new code
 
         holder.bind(news)
@@ -56,7 +62,7 @@ class NewsAdapter(private val context: Context, private val newsList: List<Artic
                 Toast.makeText(context, "Bookmark Removed", Toast.LENGTH_SHORT).show()
             } else {
                 bookmarkManager.saveBookmark(news)
-                Toast.makeText(context, "Bookmarked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Bookmark Added", Toast.LENGTH_SHORT).show()
             }
             notifyDataSetChanged()
         }

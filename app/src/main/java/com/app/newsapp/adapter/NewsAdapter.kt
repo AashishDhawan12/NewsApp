@@ -54,6 +54,7 @@ class NewsAdapter(private val context: Context, private val newsList: List<Artic
         }
         // new code
 
+
         holder.bind(news)
         // Set Bookmark Button Click
         holder.bookmarkButton.setOnClickListener {

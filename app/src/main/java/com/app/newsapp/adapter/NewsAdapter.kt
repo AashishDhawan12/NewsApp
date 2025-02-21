@@ -47,10 +47,13 @@ class NewsAdapter(private val context: Context, private val newsList: List<Artic
             .placeholder(R.drawable.ic_launcher_background)
             .into(holder.newsImage)
 
+        holder.newsImage.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(news.url))
+            holder.itemView.context.startActivity(intent)
+        }
         holder.newsTitle.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(news.url))
             holder.itemView.context.startActivity(intent)
-
         }
         // new code
 

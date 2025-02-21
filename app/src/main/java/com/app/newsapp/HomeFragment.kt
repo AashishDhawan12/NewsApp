@@ -72,9 +72,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpCategorySpinner() {
-        val categories = listOf("Trending Now", "General" ,"Business", "Technology",
+        val categories = listOf("General" ,"Business", "Technology",
                                 "Science", "Medical", "Movies",
-                                "Music", "Gaming", "Crypto");
+                                "Music", "Gaming", "Trending Now");
         val adapter = ArrayAdapter(
             requireContext(),
             android.R.layout.preference_category,
